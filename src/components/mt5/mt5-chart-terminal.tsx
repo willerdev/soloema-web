@@ -134,7 +134,7 @@ export function Mt5ChartTerminal({
   forceChartTheme,
   showTradeBar = false,
   workspaceLayout = false,
-  canManageTrades = true,
+  canManageTrades = false,
   reviewedHistory = null,
 }: Props) {
   const chartRef = useRef<LightweightChartHandle>(null);
@@ -487,7 +487,7 @@ export function Mt5ChartTerminal({
       ? parsedLotSize
       : undefined;
 
-  const orderActionBar = (
+  const orderActionBar = canManageTrades ? (
     <div className="flex shrink-0 items-center justify-center gap-2 border-t border-[var(--mt5-divider)] bg-[var(--mt5-surface)] px-3 py-2">
       <button
         type="button"
@@ -538,7 +538,7 @@ export function Mt5ChartTerminal({
         Sell
       </button>
     </div>
-  );
+  ) : null;
 
   return (
     <div
@@ -979,6 +979,7 @@ export function Mt5ChartTerminal({
                           Setup
                         </button>
                       )}
+                      {canManageTrades ? (
                       <button
                         type="button"
                         className="font-semibold text-primary hover:underline"
@@ -989,6 +990,7 @@ export function Mt5ChartTerminal({
                       >
                         Modify
                       </button>
+                      ) : null}
                     </span>
                   </div>
                 );
@@ -1033,7 +1035,7 @@ export function Mt5ChartTerminal({
 
       {showTradeBar && !showOrdersPanel && !chartOnly && orderActionBar}
 
-      {orderModal && (
+      {orderModal && canManageTrades && (
         <Mt5PlaceOrderModal
           symbol={selectedSymbol}
           direction={orderModal}

@@ -35,7 +35,6 @@ import { Logo } from "@/components/layout/logo";
 import { UserAvatar } from "@/components/layout/user-avatar";
 import { PlatformNotificationsBell } from "@/components/layout/platform-notifications-bell";
 import { MobileBottomNav } from "@/components/layout/mobile-bottom-nav";
-import { Button } from "@/components/ui/button";
 
 const SIDEBAR_EXPANDED_KEY = "trp-sidebar-expanded";
 
@@ -158,9 +157,6 @@ function PublicHeader() {
             className="rounded-lg px-3 py-2 text-sm font-medium text-muted hover:text-foreground"
           >
             Sign in
-          </Link>
-          <Link href="/register">
-            <Button size="sm">Create account</Button>
           </Link>
         </div>
       </div>
