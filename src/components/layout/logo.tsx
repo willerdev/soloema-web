@@ -12,7 +12,7 @@ export function Logo({
 }) {
   const wordmark = (
     <span className={cn("font-bold tracking-tight text-foreground", className)}>
-      Solo<span className="text-primary">ema</span>
+      solo<span className="text-primary">Rukundo</span>
     </span>
   );
 
@@ -33,11 +33,11 @@ export function Logo({
           className={cn(
             "ml-3 overflow-hidden whitespace-nowrap font-bold tracking-tight text-foreground transition-all duration-300",
             "max-w-0 opacity-0",
-            "group-hover/sidebar:max-w-[11rem] group-hover/sidebar:opacity-100",
-            "group-focus-within/sidebar:max-w-[11rem] group-focus-within/sidebar:opacity-100",
+            "group-hover/sidebar:max-w-[12rem] group-hover/sidebar:opacity-100",
+            "group-focus-within/sidebar:max-w-[12rem] group-focus-within/sidebar:opacity-100",
           )}
         >
-          Solo<span className="text-primary">ema</span>
+          solo<span className="text-primary">Rukundo</span>
         </span>
       </>
     );

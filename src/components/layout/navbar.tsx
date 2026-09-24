@@ -35,6 +35,7 @@ import { Logo } from "@/components/layout/logo";
 import { UserAvatar } from "@/components/layout/user-avatar";
 import { PlatformNotificationsBell } from "@/components/layout/platform-notifications-bell";
 import { MobileBottomNav } from "@/components/layout/mobile-bottom-nav";
+import { Button } from "@/components/ui/button";
 
 const SIDEBAR_EXPANDED_KEY = "trp-sidebar-expanded";
 
@@ -151,6 +152,17 @@ function PublicHeader() {
         <Link href="/" className="flex items-center">
           <Logo className="text-lg" />
         </Link>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <Link
+            href="/login"
+            className="rounded-lg px-3 py-2 text-sm font-medium text-muted hover:text-foreground"
+          >
+            Sign in
+          </Link>
+          <Link href="/register">
+            <Button size="sm">Create account</Button>
+          </Link>
+        </div>
       </div>
     </header>
   );
@@ -164,14 +176,14 @@ function SidebarBrand({ expanded }: { expanded: boolean }) {
         "flex h-14 shrink-0 items-center gap-3 px-3",
         !expanded && "justify-center px-0",
       )}
-      title="Soloema"
+      title="soloRukundo"
     >
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
         <Hexagon className="h-5 w-5" strokeWidth={2.5} />
       </span>
       {expanded && (
         <span className="truncate font-bold tracking-tight text-foreground">
-          Solo<span className="text-primary">ema</span>
+          solo<span className="text-primary">Rukundo</span>
         </span>
       )}
     </Link>

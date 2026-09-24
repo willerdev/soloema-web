@@ -59,14 +59,14 @@ export default function AutoWithdrawPage() {
           </span>
           <div className="min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan">
-              Soloema
+              soloRukundo
             </p>
             <h1 className="mt-1 text-2xl font-bold tracking-tight text-foreground">
               Daily auto-withdraw
             </h1>
             <p className="mt-1.5 text-sm leading-relaxed text-muted">
               Send available USDT to a saved TRC20 wallet every day at 09:00.
-              This is the Soloema platform wallet. Deriv
+              This is the soloRukundo platform wallet. Deriv
               cashout addresses are saved under Journal or Deriv.
             </p>
             {!SOLO_WALLET_WITHDRAW_ENABLED ? (

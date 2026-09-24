@@ -57,7 +57,7 @@ export function InvestmentHome({ displayName }: { displayName?: string }) {
         className="space-y-2"
       >
         <h1 className="text-2xl font-bold text-white sm:text-3xl">
-          {displayName ? `Welcome, ${displayName}` : "Soloema"}
+          {displayName ? `Welcome, ${displayName}` : "soloRukundo"}
         </h1>
         <p className="max-w-2xl text-sm text-gray-400 sm:text-base">
           Deposit, earn on Smart Invest, and manage the blockchain contract. No

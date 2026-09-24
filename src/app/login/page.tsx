@@ -191,7 +191,7 @@ function LoginForm() {
             </CardTitle>
             <CardDescription>
               {step === "credentials"
-                ? "Sign in to Soloema"
+                ? "Sign in to soloRukundo"
                 : `We sent a 6-digit code to ${email}`}
             </CardDescription>
           </CardHeader>
@@ -236,6 +236,12 @@ function LoginForm() {
                   {loading ? "Sending code..." : "Continue"}
                 </Button>
               </form>
+              <p className="mt-6 text-center text-sm text-muted">
+                New here?{" "}
+                <Link href="/register" className="text-primary hover:underline">
+                  Create an account
+                </Link>
+              </p>
             ) : (
               <form onSubmit={handleOtp} className="space-y-4">
                 <div className="space-y-2">

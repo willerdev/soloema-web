@@ -193,7 +193,7 @@ export function DerivCryptoWallets({ canEdit = true }: { canEdit?: boolean }) {
             />
             <Slot
               title="Auto-withdraw address"
-              hint="Network and wallet Deriv should pay out to. Not the Soloema platform wallet."
+              hint="Network and wallet Deriv should pay out to. Not the soloRukundo platform wallet."
               purpose="WITHDRAW"
               saved={wallets.withdraw}
               onSaved={setWallets}

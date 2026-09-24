@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Soloema",
+  title: "Terms & Conditions | soloRukundo",
   description:
-    "Platform terms, preferred withdrawal schedule, and early-exit penalties for Soloema.",
+    "Platform terms, preferred withdrawal schedule, and early-exit penalties for soloRukundo.",
 };
 
 const EFFECTIVE = "27 July 2026";
@@ -20,7 +20,7 @@ export default function TermsPage() {
       </h1>
       <p className="mt-3 text-sm text-gray-400">
         Effective {EFFECTIVE}. By creating an account, depositing, investing, or
-        requesting a withdrawal on Soloema, you agree
+        requesting a withdrawal on soloRukundo, you agree
         to these Terms.
       </p>
 

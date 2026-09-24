@@ -187,7 +187,7 @@ export function DailyIncomeJournal({ hideTitle = false }: { hideTitle?: boolean 
         <div>
           <h2 className="text-lg font-semibold text-white">Platform wallet calendar</h2>
           <p className="mt-1 text-sm text-muted">
-            Soloema USDT ledger only — not Deriv and not MT5.
+            soloRukundo USDT ledger only — not Deriv and not MT5.
           </p>
         </div>
       )}

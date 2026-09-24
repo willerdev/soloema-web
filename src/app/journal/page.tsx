@@ -11,7 +11,7 @@ export default function JournalPage() {
     <div className="mx-auto max-w-3xl space-y-5 px-4 py-6 xl:max-w-5xl">
       <div>
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan">
-          Soloema
+          soloRukundo
         </p>
         <h1 className="mt-1 text-2xl font-bold text-white">Journal</h1>
         <p className="mt-1.5 text-sm leading-relaxed text-muted">

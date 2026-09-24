@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Soloema",
+  title: "soloRukundo",
   description:
     "Wallet, Smart Invest, and blockchain contract — deposit, earn, withdraw.",
-  keywords: ["investing", "smart invest", "USDT", "Soloema"],
+  keywords: ["investing", "smart invest", "USDT", "soloRukundo"],
 };
 
 /** Lock zoom/pinch-resize on phones so the trading UI stays fixed. */

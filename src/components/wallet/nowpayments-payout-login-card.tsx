@@ -213,7 +213,7 @@ export function NowpaymentsPayoutLoginCard() {
                 </div>
               ) : (
                 <p className="text-xs text-muted">
-                  Only the Soloema admin can switch between Render env and
+                  Only the soloRukundo admin can switch between Render env and
                   Settings. You can still save credentials below.
                 </p>
               )}

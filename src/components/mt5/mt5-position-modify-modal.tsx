@@ -216,7 +216,7 @@ export function Mt5PositionModifyModal({
 
         {!canManage && (
           <p className="mb-3 text-xs text-amber-300">
-            Only the Soloema admin can close or modify live trades.
+            Only the soloRukundo admin can close or modify live trades.
           </p>
         )}
 

@@ -221,7 +221,7 @@ export function WalletAutoWithdrawSettings({
               Destination wallet
             </h2>
             <p className="mt-1 text-sm text-muted">
-              Pick a verified TRC20 address. Soloema sends here once a day.
+              Pick a verified TRC20 address. soloRukundo sends here once a day.
             </p>
           </div>
           <Button

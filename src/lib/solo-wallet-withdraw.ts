@@ -1,5 +1,5 @@
 /**
- * Soloema wallet withdraw pause.
+ * soloRukundo wallet withdraw pause.
  * Set `SOLO_WALLET_WITHDRAW_ENABLED` to `true` to turn withdraw back on.
  */
 export const SOLO_WALLET_WITHDRAW_ENABLED = false;
