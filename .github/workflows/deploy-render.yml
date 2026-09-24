@@ -3,13 +3,18 @@ name: Deploy soloema-web
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Render deploy hook
-        if: ${{ secrets.RENDER_DEPLOY_HOOK_SOLOEMA_WEB != '' }}
-        run: curl -fsS -X POST "$RENDER_DEPLOY_HOOK_SOLOEMA_WEB"
         env:
-          RENDER_DEPLOY_HOOK_SOLOEMA_WEB: ${{ secrets.RENDER_DEPLOY_HOOK_SOLOEMA_WEB }}
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_SOLOEMA_WEB }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "RENDER_DEPLOY_HOOK_SOLOEMA_WEB is not set"
+            exit 1
+          fi
+          curl -fsS -X POST "$HOOK"
