@@ -42,7 +42,6 @@ import {
 import { useMt5ChartDisplaySettings } from "@/hooks/use-mt5-chart-display-settings";
 import { useAuthStore } from "@/stores/auth";
 import {
-  mt5DisplayBalance,
   MT5_BUY,
   MT5_SELL,
   Mt5Pnl,
@@ -1002,13 +1001,7 @@ export function Mt5ChartTerminal({
             <span>
               Balance:{" "}
               <strong className="text-[var(--mt5-text)]">
-                {fmtMt5Price(
-                  account
-                    ? accountSource === "linked_live"
-                      ? account.startingBalance + (account.floatingProfit ?? 0)
-                      : mt5DisplayBalance(account, accountSource)
-                    : 0,
-                )}
+                {fmtMt5Price(account?.startingBalance ?? 0)}
               </strong>
             </span>
             <span>

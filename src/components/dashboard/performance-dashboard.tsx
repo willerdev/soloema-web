@@ -362,7 +362,7 @@ export function PerformanceDashboard({
 
         <div className="flex items-center justify-around rounded-2xl border border-white/10 bg-white/[0.03] p-4">
           <Gauge value={floating} label="Floating" />
-          <Gauge value={dayPnl + floating} label="Day + float" />
+          <Gauge value={dayPnl} label="Closed PnL" />
         </div>
       </div>
     </div>

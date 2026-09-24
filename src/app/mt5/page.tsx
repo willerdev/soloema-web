@@ -29,7 +29,6 @@ import { usePriceAlertMonitor } from "@/hooks/use-price-alert-monitor";
 import { useMetaApiLive } from "@/hooks/use-metaapi-live";
 import { setMetaApiHasOpenTrades } from "@/lib/metaapi-live";
 import { cn } from "@/lib/utils";
-import { mt5DisplayBalance } from "@/components/mt5/mt5-ui";
 
 type RightTab = "watchlist" | "alerts" | "history";
 
@@ -100,11 +99,7 @@ export default function SoloMt5Page() {
 
   const account = data?.account;
   const equity = account?.equity ?? account?.startingBalance ?? 0;
-  const walletBalance = account
-    ? data?.accountSource === "linked_live"
-      ? account.startingBalance + (account.floatingProfit ?? 0)
-      : mt5DisplayBalance(account, data?.accountSource)
-    : 0;
+  const walletBalance = account?.startingBalance ?? 0;
   const {
     alerts,
     addAlert,
