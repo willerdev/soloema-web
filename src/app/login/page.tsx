@@ -197,6 +197,7 @@ function LoginForm() {
           </CardHeader>
           <CardContent>
             {step === "credentials" ? (
+              <>
               <form onSubmit={handleCredentials} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
@@ -242,6 +243,7 @@ function LoginForm() {
                   Create an account
                 </Link>
               </p>
+              </>
             ) : (
               <form onSubmit={handleOtp} className="space-y-4">
                 <div className="space-y-2">
