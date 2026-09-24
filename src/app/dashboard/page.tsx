@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { api, type UserMt5Trade } from "@/lib/api";
+import { isAfterSoloMt5HistoryReset } from "@/lib/solo-mt5-history-since";
 import { AuthLoadingScreen, useRequireAuth } from "@/hooks/use-require-auth";
 import { useAuthStore, syncApiAuthToken } from "@/stores/auth";
 import { Button } from "@/components/ui/button";
@@ -45,7 +46,7 @@ export default function DashboardPage() {
       api.wallet.summary(),
       api.wallet.dailyCalendar(now.getUTCFullYear(), now.getUTCMonth() + 1),
       api.signals.mt5Running(),
-      api.signals.mt5History(false, 2),
+      api.signals.mt5History(false, 1),
       api.metaApi.status(),
       api.deriv.status(),
     ]).then((results) => {
@@ -85,7 +86,11 @@ export default function DashboardPage() {
         setFloating(runningRes.value.stats.floatingProfit);
       }
       if (history.status === "fulfilled") {
-        setDayPnl(history.value.dayPnl ?? 0);
+        setDayPnl(
+          history.value.items
+            .filter((row) => isAfterSoloMt5HistoryReset(row.closedAt))
+            .reduce((sum, row) => sum + (row.pnl ?? 0), 0),
+        );
       }
       if (meta.status === "fulfilled") {
         readyState.metaApi = meta.value.connected;
