@@ -8,8 +8,8 @@ import { WalletAutoWithdrawSettings } from "@/components/wallet/wallet-auto-with
 import { NowpaymentsPayoutLoginCard } from "@/components/wallet/nowpayments-payout-login-card";
 import { api, type WalletSummary } from "@/lib/api";
 import {
-  SOLO_WALLET_WITHDRAW_ENABLED,
   SOLO_WALLET_WITHDRAW_PAUSED_LABEL,
+  isSoloWalletWithdrawEnabled,
 } from "@/lib/solo-wallet-withdraw";
 import { ArrowLeft, Clock, Loader2 } from "lucide-react";
 
@@ -59,17 +59,17 @@ export default function AutoWithdrawPage() {
           </span>
           <div className="min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan">
-              soloRukundo
+              soloEmma
             </p>
             <h1 className="mt-1 text-2xl font-bold tracking-tight text-foreground">
               Daily auto-withdraw
             </h1>
             <p className="mt-1.5 text-sm leading-relaxed text-muted">
-              Send available USDT to a saved TRC20 wallet every day at 09:00.
-              This is the soloRukundo platform wallet. Deriv
+              Send available USDT to a saved TRC20 wallet every day at 09:00
+              Kampala time. This is the soloEmma platform wallet. Deriv
               cashout addresses are saved under Journal or Deriv.
             </p>
-            {!SOLO_WALLET_WITHDRAW_ENABLED ? (
+            {!isSoloWalletWithdrawEnabled(summary) ? (
               <p className="mt-2 text-sm font-medium text-amber-300">
                 {SOLO_WALLET_WITHDRAW_PAUSED_LABEL}
               </p>
