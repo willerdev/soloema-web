@@ -11,6 +11,7 @@ import { DailyIncomeJournal } from "@/components/wallet/daily-income-journal";
 import { DerivCryptoWallets } from "@/components/deriv/deriv-crypto-wallets";
 import { fmtMt5Price, Mt5Pnl } from "@/components/mt5/mt5-ui";
 import { cn, formatCurrency } from "@/lib/utils";
+import { Loader2 } from "lucide-react";
 import { isAfterSoloMt5HistoryReset } from "@/lib/solo-mt5-history-since";
 
 type SourceFilter = "all" | "mt5" | "deriv" | "wallet";
