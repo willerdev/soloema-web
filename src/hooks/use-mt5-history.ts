@@ -10,7 +10,7 @@ import { useMetaApiLive } from "@/hooks/use-metaapi-live";
 import { isAfterSoloMt5HistoryReset } from "@/lib/solo-mt5-history-since";
 
 const POLL_MS = 45_000;
-const HISTORY_LIMIT = 10;
+const HISTORY_LIMIT = 80;
 
 
 export function useMt5History(userId: string | undefined, linked: boolean) {
@@ -35,7 +35,7 @@ export function useMt5History(userId: string | undefined, linked: boolean) {
       setLoading(true);
       setError(null);
       try {
-        const res = await api.signals.mt5History(opts?.fresh, 1);
+        const res = await api.signals.mt5History(opts?.fresh, 7);
         if (res.message && res.items.length === 0) {
           setError(res.message);
           return;
