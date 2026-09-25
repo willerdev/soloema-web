@@ -23,7 +23,7 @@ import {
   ChevronUp,
   Menu,
   X,
-  Hexagon,
+  ShieldCheck,
   Clock,
   LineChart,
   CandlestickChart,
@@ -151,14 +151,6 @@ function PublicHeader() {
         <Link href="/" className="flex items-center">
           <Logo className="text-lg" />
         </Link>
-        <div className="flex items-center gap-2 sm:gap-3">
-          <Link
-            href="/login"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-muted hover:text-foreground"
-          >
-            Sign in
-          </Link>
-        </div>
       </div>
     </header>
   );
@@ -172,14 +164,14 @@ function SidebarBrand({ expanded }: { expanded: boolean }) {
         "flex h-14 shrink-0 items-center gap-3 px-3",
         !expanded && "justify-center px-0",
       )}
-      title="soloRukundo"
+      title="solo Emma"
     >
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
-        <Hexagon className="h-5 w-5" strokeWidth={2.5} />
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/25">
+        <ShieldCheck className="h-5 w-5" strokeWidth={2.5} />
       </span>
       {expanded && (
-        <span className="truncate font-bold tracking-tight text-foreground">
-          solo<span className="text-primary">Rukundo</span>
+        <span className="truncate font-bold text-foreground">
+          solo<span className="text-primary">Emma</span>
         </span>
       )}
     </Link>
@@ -581,7 +573,9 @@ export function Navbar() {
         onClose={() => setMobileOpen(false)}
         pathname={pathname}
       />
-      <MobileBottomNav onOpenFullMenu={() => setMobileOpen(true)} />
+      {!hideMobileHeader && (
+        <MobileBottomNav onOpenFullMenu={() => setMobileOpen(true)} />
+      )}
     </>
   );
 }
@@ -596,6 +590,7 @@ export function MainContent({ children }: { children: React.ReactNode }) {
       className={cn(
         "app-main flex-1 transition-[padding] duration-300",
         isAuthenticated &&
+          !tradingDesk &&
           "pb-[calc(5.25rem+env(safe-area-inset-bottom,0px))] md:pb-0",
         isAuthenticated && "md:pl-[calc(4.5rem+1.5rem)]",
         tradingDesk && "flex h-dvh min-h-0 flex-col overflow-hidden",
