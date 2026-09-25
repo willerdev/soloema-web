@@ -1,27 +1,27 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0c1410;
-  --color-foreground: #f4f1ea;
-  --color-muted: #9aa894;
-  --color-border: #2a3d32;
-  --color-surface: #14201a;
-  --color-navy: #1a2e24;
-  --color-primary: #c4a35a;
-  --color-cyan: #7d9a78;
-  --color-success: #3d9a6a;
-  --color-danger: #c45c4a;
-  --color-rank-gold: #e0c078;
+  --color-background: #07111F;
+  --color-foreground: #F8FAFC;
+  --color-muted: #94A3B8;
+  --color-border: #1E3A5F;
+  --color-surface: #0D1B2A;
+  --color-navy: #102A43;
+  --color-primary: #2563EB;
+  --color-cyan: #22D3EE;
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+  --color-rank-gold: #FBBF24;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 html.light {
-  --color-background: #f6f3ec;
-  --color-foreground: #1a241c;
-  --color-muted: #5c6b60;
-  --color-border: rgba(26, 36, 28, 0.1);
-  --color-surface: rgba(255, 252, 247, 0.94);
+  --color-background: #F1F5F9;
+  --color-foreground: #0F172A;
+  --color-muted: #64748B;
+  --color-border: rgba(15, 23, 42, 0.1);
+  --color-surface: rgba(255, 255, 255, 0.92);
 }
 
 * {
@@ -72,13 +72,13 @@ body {
 }
 
 .modal-panel {
-  background: #14201a !important;
+  background: #0D1B2A !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
 
 html.light .modal-panel {
-  background: #fffdf8 !important;
+  background: #ffffff !important;
 }
 
 /* MT5 terminal shell — theme-aware surfaces, fixed buy/sell accent colors */
@@ -87,8 +87,8 @@ html.light .modal-panel {
   --mt5-red: #ff5252;
   --mt5-text: var(--color-foreground);
   --mt5-muted: var(--color-muted);
-  --mt5-bg: #0c1410;
-  --mt5-surface: #14201a;
+  --mt5-bg: #07111F;
+  --mt5-surface: #0D1B2A;
   --mt5-divider: var(--color-border);
   --mt5-row-hover: rgba(255, 255, 255, 0.05);
 }
@@ -104,11 +104,11 @@ html.light .mt5-shell {
 
 /* Floating mobile bottom nav */
 .mobile-nav-dock {
-  --nav-dock-bg: #14201a;
-  --nav-dock-border: #2a3d32;
+  --nav-dock-bg: #0D1B2A;
+  --nav-dock-border: #1E3A5F;
   --nav-dock-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
-  --nav-dock-inactive: #9aa894;
-  --nav-dock-active: #f4f1ea;
+  --nav-dock-inactive: #94a3b8;
+  --nav-dock-active: #F8FAFC;
 }
 
 html.light .mobile-nav-dock {
@@ -134,7 +134,7 @@ html.light .mobile-nav-dock {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #c4a35a 0%, #7d9a78 50%, #3d9a6a 100%);
+  background: linear-gradient(135deg, #2563EB 0%, #22D3EE 50%, #10B981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -183,4 +183,38 @@ html.light .mobile-nav-dock {
 
 .past-data-label {
   animation: past-data-shimmer 2.2s ease-in-out infinite;
+}
+
+/* Phones and tablets: hide charts, show the positions desk. */
+.mt5-mobile-desk {
+  display: none;
+}
+.mt5-desktop-desk {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+@media (max-width: 1023px), ((hover: none) and (pointer: coarse)) {
+  .mt5-desktop-desk {
+    display: none !important;
+  }
+  .mt5-mobile-desk {
+    position: fixed;
+    inset: 0;
+    bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
+    z-index: 40;
+    display: flex !important;
+    min-height: 0;
+    flex-direction: column;
+    background: var(--mt5-bg, #07111f);
+  }
+  [data-mt5-chart-pane],
+  [data-mt5-chart-terminal] canvas {
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
 }
